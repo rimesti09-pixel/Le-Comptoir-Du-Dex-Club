@@ -37,7 +37,11 @@ export function searchCards(cards, term) {
  */
 export function filterByType(cards, type) {
   // TODO
-  return [];
+  if (type === "Tous"){
+    return cards
+  }else{
+    return cards.filter(card=>card.type===type)
+  }
 }
 
 /**
