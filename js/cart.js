@@ -11,7 +11,7 @@
  */
 export function findCard(cards, id) {
   // TODO : cards.find(...)
-  return undefined;
+  return cards.find(card=>card.id === id);
 }
 
 /**

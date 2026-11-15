@@ -86,8 +86,10 @@ return counts;
  * sort vaut "numero" (id croissant), "prix-asc" ou "prix-desc".
  */
 export function sortCards(cards, sort) {
-  // TODO : [...cards].sort((a, b) => ...)
-  return cards;
+  // TODO : 
+  if(sort === "numero"){
+ return [...cards].sort((a, b) => a.id - b.id);
+  }
 }
 
 /**
