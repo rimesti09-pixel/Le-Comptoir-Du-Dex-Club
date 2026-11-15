@@ -51,9 +51,11 @@ export function filterByType(cards, type) {
  */
 export function getVisibleCards(cards, filters) {
   // TODO : appelez filterByType, puis searchCards sur le résultat
-  return [];
-}
+  const filteredByType = filterByType(cards,filters.type);
+  const searchedCards = searchCards(filteredByType, filters.type)
 
+  return searchedCards;
+}
 /**
  * Compte les cartes de chaque type.
  * Exemple : countByType(cards) → { Feu: 3, Eau: 3, Plante: 3, Électrik: 3 }
