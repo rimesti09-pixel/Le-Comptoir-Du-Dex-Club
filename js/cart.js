@@ -27,7 +27,21 @@ export function addToCart(cart, id, cards) {
   //         pour modifier une ligne sans toucher l'originale : { ...ligne, quantite: ligne.quantite + 1 }
   // TODO 3. Pas de ligne : si stock > 0, renvoyez [...cart, { id, quantite: 1 }]
   // TODO 4. Sinon, renvoyez cart sans rien changer
-  return [];
+  const carte = findCard(cards, id)
+  const ligne = cart.find(item=>item.id === id);
+  if (ligne && ligne.quantite< carte.stock){
+   return cart.map(item =>
+    item.id===id 
+    ? {...item, quantite:item.quantite + 1}
+   :item    
+   );
+  }else if(!ligne&&carte.stock>0){
+ return [...cart, { id, quantite: 1 }]
+     
+  }else{
+  return cart;
+  }
+  
 }
 
 /**
@@ -36,7 +50,7 @@ export function addToCart(cart, id, cards) {
  * - si la nouvelle quantité vaut 0 ou moins, la ligne est retirée
  */
 export function changeQuantity(cart, id, delta, cards) {
-  // TODO
+  // TODO 
   return [];
 }
 
