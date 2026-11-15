@@ -18,9 +18,17 @@
  */
 export function searchCards(cards, term) {
   // TODO 1. Nettoyez le terme : trim() puis toLowerCase()
+   const cleanTerm=term.toLowerCase().trim()
   // TODO 2. Si le terme est vide, renvoyez une copie de cards
+  
+  if (cleanTerm===""){
+
+    return[...cards];
+  }
+
   // TODO 3. Sinon, renvoyez cards.filter(...) : le nom en minuscules contient-il le terme ?
-  return [];
+  return cards.filter(card => card.name.toLowerCase().includes("kit"));
+  
 }
 
 /**
