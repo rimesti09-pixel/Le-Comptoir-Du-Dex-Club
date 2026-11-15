@@ -61,10 +61,20 @@ export function getVisibleCards(cards, filters) {
  * Exemple : countByType(cards) → { Feu: 3, Eau: 3, Plante: 3, Électrik: 3 }
  */
 export function countByType(cards) {
-  // TODO 1. Créez un objet vide : const counts = {};
+  // TODO 1. Créez un objet vide : 
+  const counts = {};
+
   // TODO 2. Pour chaque carte : si counts[carte.type] n'existe pas, mettez 0, puis ajoutez 1
+  for (let i=0 ; i<cards.length ;i++){
+    const card = cards [i];
+    if(counts[card.type]=== undefined){
+      counts[card.type]= 0;
+    }
+      counts[card.type]++;
+  
   // TODO 3. Renvoyez counts
-  return {};
+}
+return counts;
 }
 
 // -------------------------------------------------------------
