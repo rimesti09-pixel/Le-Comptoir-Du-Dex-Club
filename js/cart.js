@@ -50,7 +50,7 @@ export function addToCart(cart, id, cards) {
  * - si la nouvelle quantité vaut 0 ou moins, la ligne est retirée
  */
 export function changeQuantity(cart, id, delta, cards) {
-  // TODO 
+  
   return [];
 }
 
